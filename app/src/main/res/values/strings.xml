@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">KotlinStudy</string>
+    <array name="skill_names">
+        <item>Hello World</item>
+        <item>基础语法</item>
+        <item>基本数据类型</item>
+        <item>条件控制</item>
+        <item>循环控制</item>
+        <item>类和对象</item>
+        <item>继承</item>
+        <item>接口</item>
+        <item>扩展</item>
+        <item>数据类与密封类</item>
+        <item>泛型</item>
+        <item>枚举类</item>
+        <item>对象表达式/声明</item>
+        <item>委托</item>
+    </array>
+</resources>
