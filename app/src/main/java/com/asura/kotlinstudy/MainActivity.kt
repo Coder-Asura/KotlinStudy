@@ -8,39 +8,39 @@ import android.util.Log
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    private val TAG: String? = "Asura";
-    private var mRv_ktSkill: RecyclerView? = null;
-    private var mLayoutManager: LinearLayoutManager? = null;
-    private var mAdapter: MyAdapter? = null;
+    private val TAG: String? = "Asura"
+    private var mRv_ktSkill: RecyclerView? = null
+    private var mLayoutManager: LinearLayoutManager? = null
+    private var mAdapter: MyAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mRv_ktSkill = findViewById(R.id.rv_ktSkill) as RecyclerView;
-        initRv();
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        mRv_ktSkill = findViewById(R.id.rv_ktSkill) as RecyclerView
+        initRv()
     }
 
     private fun initRv() {
-        mLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        mLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         mAdapter = MyAdapter(resources.getStringArray(R.array.skill_names)
                 , MyAdapter.CallBack { itemView, position ->
-            Toast.makeText(this, "" + position, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "" + position, Toast.LENGTH_SHORT).show()
             doSomeThing(position)
         })
-        mRv_ktSkill!!.layoutManager = mLayoutManager;
-        mRv_ktSkill!!.adapter = mAdapter;
+        mRv_ktSkill!!.layoutManager = mLayoutManager
+        mRv_ktSkill!!.adapter = mAdapter
     }
 
     private fun doSomeThing(position: Int) {
         if (position == 0) {
-            helloWorld()
+            say("World")
         } else if (position == 1) {
             val ktBasicGrammar: KtBasicGrammar = KtBasicGrammar()
-            val empty = emptyArray<String>();
-            ktBasicGrammar.main(empty);
+            val empty = emptyArray<String>()
+            ktBasicGrammar.main(empty)
         }
     }
 
-    private fun helloWorld() {
-        Log.d(TAG, "Hello World");
+    private fun say(msg: String) {
+        Log.d(TAG, "Hello $msg")
     }
 }
