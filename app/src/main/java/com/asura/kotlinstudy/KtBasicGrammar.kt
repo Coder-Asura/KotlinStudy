@@ -14,6 +14,9 @@ class KtBasicGrammar {
         Log.d(TAG, sum1(1, 1).toString())
         Log.d(TAG, sum2(2, 2).toString())
         Log.d(TAG, sum4(4, 4).toString())//todo 输出了 kotlin.Unit ，暂时不解
+        vars(1, 2, 3, 4, 5)
+        val lambda: (Int, Int) -> Int = { x, y -> x + y }
+        Log.d(TAG, "lambda"+lambda(1, 2).toString())
     }
 
     //    函数定义使用关键字 fun，参数格式为：参数 : 类型
@@ -28,5 +31,11 @@ class KtBasicGrammar {
     //    无返回值的函数(类似Java中的void)：
     fun sum4(a: Int, b: Int): Unit {
         a + b
+    }
+
+    //    函数的变长参数可以用 vararg 关键字进行标识：
+    fun vars(vararg v: Int) {
+        for (vt in v)
+            Log.d(TAG, "变长参数 vararg "+vt);
     }
 }
