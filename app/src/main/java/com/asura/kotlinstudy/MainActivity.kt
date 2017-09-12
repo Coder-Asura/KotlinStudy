@@ -37,6 +37,14 @@ class MainActivity : AppCompatActivity() {
             val ktBasicGrammar: KtBasicGrammar = KtBasicGrammar()
             val empty = emptyArray<String>()
             ktBasicGrammar.main(empty)
+        } else if (position == 2) {
+            val ktBasicDataType: KtBasicDataType = KtBasicDataType()
+            val empty = emptyArray<String>()
+            ktBasicDataType.main(empty)
+        }else if (position==3){
+            val ktConditionControl : KtConditionControl = KtConditionControl()
+            val empty = emptyArray<String>()
+            ktConditionControl.main(empty)
         }
     }
 
