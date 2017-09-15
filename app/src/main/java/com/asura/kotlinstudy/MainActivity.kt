@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    private val TAG: String? = "Asura"
     private var mRv_ktSkill: RecyclerView? = null
     private var mLayoutManager: LinearLayoutManager? = null
     private var mAdapter: MyAdapter? = null
@@ -41,14 +39,24 @@ class MainActivity : AppCompatActivity() {
             val ktBasicDataType: KtBasicDataType = KtBasicDataType()
             val empty = emptyArray<String>()
             ktBasicDataType.main(empty)
-        }else if (position==3){
-            val ktConditionControl : KtConditionControl = KtConditionControl()
+        } else if (position == 3) {
+            val ktConditionControl: KtConditionControl = KtConditionControl()
             val empty = emptyArray<String>()
             ktConditionControl.main(empty)
+        } else if (position == 4) {
+            val ktLoopControl: KtLoopControl = KtLoopControl()
+            val empty = emptyArray<String>()
+            ktLoopControl.main(empty)
+        } else if (position == 5) {
+            KtClassAndObject().main()
+        } else if (position == 6) {
+            KtExtends().main()
+        } else if (position == 7) {
+            KtInterface().main()
         }
     }
 
     private fun say(msg: String) {
-        Log.d(TAG, "Hello $msg")
+        ALog.d("Hello $msg")
     }
 }

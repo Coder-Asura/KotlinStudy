@@ -1,14 +1,11 @@
 package com.asura.kotlinstudy
 
-import android.util.Log
-
 /**
  * Created by Liuxd on 2017/9/4 13:52.
  * 基础数据类型
  * http://www.runoob.com/kotlin/kotlin-basic-types.html
  */
 class KtBasicDataType {
-    private val TAG = "Asura";
     fun main(args: Array<String>) {
         basic()
         compare()
@@ -24,9 +21,9 @@ class KtBasicDataType {
             |我是一个多行字符串4
             我是一个多行字符串5
         """
-        Log.d(TAG, text)
-        Log.d(TAG, textLong)//输出有一些前置空格
-        Log.d(TAG, textLong.trimMargin("|我"))//输出如下：
+        ALog.d(text)
+        ALog.d(textLong)//输出有一些前置空格
+        ALog.d(textLong.trimMargin("|我"))//输出如下：
 //        是一个多行字符串1
 //        是一个多行字符串2
 //        是一个多行字符串3
@@ -54,14 +51,14 @@ class KtBasicDataType {
     private fun compare() {
         val a: Int = 1000
 //        在 Kotlin 中，三个等号 === 表示比较对象地址，两个 == 表示比较两个值大小。
-        Log.d(TAG, (a === a).toString()) // true，值相等，对象地址相等
+        ALog.d((a === a).toString()) // true，值相等，对象地址相等
         //经过了装箱，创建了两个不同的对象
         val boxedA: Int? = a
         val anotherBoxedA: Int? = a
 
         //虽然经过了装箱，但是值是相等的，都是10000
-        Log.d(TAG, ((boxedA === anotherBoxedA).toString()))//  false，值相等，对象地址不一样
-        Log.d(TAG, ((boxedA == anotherBoxedA).toString())) // true，值相等
+        ALog.d(((boxedA === anotherBoxedA).toString()))//  false，值相等，对象地址不一样
+        ALog.d(((boxedA == anotherBoxedA).toString())) // true，值相等
 //      注意：这里把 a 的值换成 100，这里应该跟 Java 中是一样的，在范围是 [-128, 127] 之间并不会创建新的对象，比较输出的都是 true，
 //      从 128 开始，比较的结果才为 false。
     }
@@ -81,30 +78,30 @@ class KtBasicDataType {
 
 //        有些情况下也是可以使用自动类型转化的，前提是可以根据上下文环境推断出正确的数据类型而且数学操作符会做相应的重载。
         val l = 1L + 3 // Long + Int => Long
-        Log.d(TAG, "l is Long：" + (l is Long).toString())
+        ALog.d("l is Long：" + (l is Long).toString())
     }
 
     private fun bitOperation() {
         val a = 0b10001001
         val b = 0b11001100
-        Log.d(TAG, "位运算 a:" + a.toString() + "  b:" + b.toString())
-        Log.d(TAG, "shl(bits) – 左移位 (Java’s <<)：" + a.shl(2))
-        Log.d(TAG, "shr(bits) – 右移位 (Java’s >>)：" + a.shr(2))
-        Log.d(TAG, "ushr(bits) – 无符号右移位 (Java’s >>>)：" + a.ushr(2))
-        Log.d(TAG, "and(bits) – 与：" + a.and(b))
-        Log.d(TAG, "or(bits) – 或：" + a.or(b))
-        Log.d(TAG, "xor(bits) – 异或：" + a.xor(b))
-        Log.d(TAG, "inv() – 非：" + a.inv())
+        ALog.d("位运算 a:" + a.toString() + "  b:" + b.toString())
+        ALog.d("shl(bits) – 左移位 (Java’s <<)：" + a.shl(2))
+        ALog.d("shr(bits) – 右移位 (Java’s >>)：" + a.shr(2))
+        ALog.d("ushr(bits) – 无符号右移位 (Java’s >>>)：" + a.ushr(2))
+        ALog.d("and(bits) – 与：" + a.and(b))
+        ALog.d("or(bits) – 或：" + a.or(b))
+        ALog.d("xor(bits) – 异或：" + a.xor(b))
+        ALog.d("inv() – 非：" + a.inv())
     }
 
     private fun array() {
         val a = arrayOf(1, 2, 3)
         val b = Array(3, { i -> (1 * 2) })
-        Log.d(TAG, "arrayOf 创建数组：" + a.size)
-        Log.d(TAG, "Array() 创建数组：" + b.size)
+        ALog.d("arrayOf 创建数组：" + a.size)
+        ALog.d("Array() 创建数组：" + b.size)
         val x = intArrayOf(1, 2, 3, 4)
         val y = byteArrayOf(1, 2, 3, 4)
-        Log.d(TAG, "intArrayOf() 创建数组：" + x.size)
+        ALog.d("intArrayOf() 创建数组：" + x.size)
     }
 
 }

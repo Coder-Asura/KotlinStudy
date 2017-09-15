@@ -1,22 +1,19 @@
 package com.asura.kotlinstudy
 
-import android.util.Log
-
 /**
  * Created by Liuxd on 2017/9/1 15:07.
  * Kotlin 基础语法
  * http://www.runoob.com/kotlin/kotlin-basic-syntax.html
  */
 class KtBasicGrammar {
-    private val TAG = "Asura";
     fun main(args: Array<String>) {
-        Log.d(TAG, sum(1, 1).toString())
-        Log.d(TAG, sum1(1, 1).toString())
-        Log.d(TAG, sum2(2, 2).toString())
-        Log.d(TAG, sum4(4, 4).toString())//todo 输出了 kotlin.Unit ，暂时不解
+        ALog.d(sum(1, 1).toString())
+        ALog.d(sum1(1, 1).toString())
+        ALog.d(sum2(2, 2).toString())
+        ALog.d(sum4(4, 4).toString())//todo 输出了 kotlin.Unit ，暂时不解
         vars(1, 2, 3, 4, 5)
         val lambda: (Int, Int) -> Int = { x, y -> x + y }
-        Log.d(TAG, "lambda表达式：" + lambda(1, 2).toString())
+        ALog.d("lambda表达式：" + lambda(1, 2).toString())
         variate()
         templateStrings()
         nullCheck()
@@ -40,7 +37,7 @@ class KtBasicGrammar {
     //    函数的变长参数可以用 vararg 关键字进行标识：
     private fun vars(vararg v: Int) {
         for (vt in v)
-            Log.d(TAG, "变长参数 vararg :" + vt);
+            ALog.d("变长参数 vararg :" + vt);
     }
 
     //    申明常量和变量
@@ -70,8 +67,8 @@ class KtBasicGrammar {
         val s1 = "a is $a"
         a = "999";
         val s2 = "${s1.replace("is", "was")},but now is $a"
-        Log.d(TAG, s1)
-        Log.d(TAG, s2)
+        ALog.d(s1)
+        ALog.d(s2)
     }
 
     private fun nullCheck() {
@@ -82,30 +79,30 @@ class KtBasicGrammar {
 //        val ages = age!!.toInt() //抛出 kotlin.KotlinNullPointerException
         val ages1 = age?.toInt()
         val ages2 = age?.toInt() ?: -1
-        Log.d(TAG, "ages1 :" + ages1); //ages1 :null
-        Log.d(TAG, "ages2 :" + ages2);// ages2 :-1
+        ALog.d("ages1 :" + ages1); //ages1 :null
+        ALog.d("ages2 :" + ages2);// ages2 :-1
     }
 
     private fun range() {
-        Log.d(TAG, "循环输出：")
+        ALog.d("循环输出：")
         for (i in 1..4) {
-            Log.d(TAG, i.toString())// [1,4]=1,2,3,4
+            ALog.d(i.toString())// [1,4]=1,2,3,4
         }
-        Log.d(TAG, "设置步长 step：")
+        ALog.d("设置步长 step：")
         for (i in 1..4 step 2) {
-            Log.d(TAG, i.toString())//1,3
+            ALog.d(i.toString())//1,3
         }
-        Log.d(TAG, "使用 downTo：")
+        ALog.d("使用 downTo：")
         for (i in 4 downTo 2) {
-            Log.d(TAG, i.toString())//4,3,2
+            ALog.d(i.toString())//4,3,2
         }
-        Log.d(TAG, "使用 downTo + step：")
+        ALog.d("使用 downTo + step：")
         for (i in 4 downTo 2 step 2) {
-            Log.d(TAG, i.toString())//4,2
+            ALog.d(i.toString())//4,2
         }
-        Log.d(TAG, "使用 until：")
+        ALog.d("使用 until：")
         for (i in 1 until 4) {
-            Log.d(TAG, i.toString())//[1,4)=1,2,3
+            ALog.d(i.toString())//[1,4)=1,2,3
         }
     }
 }
