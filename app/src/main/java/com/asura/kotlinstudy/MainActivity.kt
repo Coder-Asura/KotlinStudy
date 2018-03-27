@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mRv_ktSkill = findViewById(R.id.rv_ktSkill) as RecyclerView
+        mRv_ktSkill = findViewById(R.id.rv_ktSkill)
         initRv()
     }
 
