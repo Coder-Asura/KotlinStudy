@@ -15,5 +15,23 @@
         <item>枚举类</item>
         <item>对象表达式/声明</item>
         <item>委托</item>
+        <item>测试</item>
+    </array>
+    <array name="skill_position">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
     </array>
 </resources>
