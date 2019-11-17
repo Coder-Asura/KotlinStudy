@@ -34,4 +34,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:recyclerview-v7:28.0.0'
+    //依赖协程核心库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines"
+    //依赖当前 Android 平台所对应的平台库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines"
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
 }

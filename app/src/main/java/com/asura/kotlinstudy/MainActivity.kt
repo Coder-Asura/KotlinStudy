@@ -1,11 +1,14 @@
 package com.asura.kotlinstudy
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.TextView
 import android.widget.Toast
+import com.asura.kotlinstudy.coroutines.CoroutinesActivity
+import com.asura.kotlinstudy.coroutines.KtCoroutines
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,13 +43,19 @@ class MainActivity : AppCompatActivity() {
             positions[5] -> KtClassAndObject().main()
             positions[6] -> KtExtends().main()
             positions[7] -> KtInterface().main()
+            positions[15] -> {
+                startActivity(Intent(MainActivity@ this, CoroutinesActivity::class.java))
+            }
         }
     }
 
-    private fun say(msg: String) {
-        ALog.d("Hello $msg")
-    }
 
     //扩展函数
-    private fun Activity.toast(msg: String) = run { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
+    companion object {
+        fun Activity.toast(msg: String) = run { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
+        fun say(msg: String) {
+            ALog.d("Hello $msg")
+        }
+
+    }
 }

@@ -16,6 +16,7 @@
         <item>对象表达式/声明</item>
         <item>委托</item>
         <item>测试</item>
+        <item>协程</item>
     </array>
     <array name="skill_position">
         <item>0</item>
@@ -33,5 +34,6 @@
         <item>12</item>
         <item>13</item>
         <item>14</item>
+        <item>15</item>
     </array>
 </resources>
